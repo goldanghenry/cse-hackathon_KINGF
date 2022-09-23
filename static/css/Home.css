@@ -1,5 +1,5 @@
  .u-section-1 {
-  background-image: url("static/img/AdobeStock_263030653.jpeg");
+  background-image: "{{ url_for('static', filename='img/AdobeStock_263030653.jpeg') }}";
   background-position: 50% 50%;
 }
 
@@ -183,7 +183,7 @@
 
 .u-section-2 .u-image-5 {
   height: 140px;
-  background-image: url("static/img/68f64b9d.jpeg");
+  background-image: "{{ url_for('static', filename='img/68f64b9d.jpeg') }}";
   background-position: 50% 50%;
   margin: 20px 0 0;
 }
@@ -531,12 +531,12 @@
   font-family: 'BMJUA_ttf';
   font-style: normal;
   font-weight: 400;
-  src: url(static/fonts/BMJUA_ttf.ttf);
+  src: "{{ url_for('static', filename='fonts/BMJUA_ttf.ttf') }}";
 }@font-face {
   font-family: 'Pretendard-Regular';
   font-style: normal;
   font-weight: 400;
-  src: url(static/fonts/Pretendard-Regular.otf);
+  src: url(Pretendard-Regular.otf);
 }@font-face {
   font-family: 'Pretendard-Medium';
   font-style: normal;
