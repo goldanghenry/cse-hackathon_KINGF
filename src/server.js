@@ -19,6 +19,23 @@ const httpServer = http.createServer(app); //http 서버도 돌리고
 //const wss = new WebSocket.Server({server}); //webSocket 서버도 돌리는거지~ (같은 포트에 있음)
 const wsServer = SocketIO(httpServer);
 
+wsServer.on("connection", (socket) => {
+    socket.on("join_room", (roomName) =>{ //소켓이 룸에 들어왔을 때!
+        socket.join(roomName);
+        socket.to(roomName).emit("welcome");
+    });
+    socket.on("offer", (offer, roomName) => { //offer가 정해졌을 때
+        socket.to(roomName).emit("offer", offer);
+    });
+    socket.on("answer", (answer, roomName) =>{
+        socket.to(roomName).emit("answer",answer);
+    });
+    socket.on("ice", (ice, roomName) =>{
+        socket.to(roomName).emit("ice", ice);
+    });
+});
+
+/*
 function publicRooms(){
     const sids = wsServer.sockets.adapter.sids;
     const rooms = wsServer.sockets.adapter.rooms;
@@ -70,21 +87,7 @@ wsServer.on("connection", (socket) => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-httpServer.listen(3000, handleListen);
-
-
-/*const sockets = []; //연결된 소켓을 여기에 넣을거야.
+const sockets = []; //연결된 소켓을 여기에 넣을거야.
 
 wss.on("connection", (socket)=>{ 
     //console.log(socket); //connection이 생기면 socket을 받음.
@@ -119,4 +122,4 @@ wss.on("connection", (socket)=>{
     
 }); */
 
-
+httpServer.listen(3000, handleListen);

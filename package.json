@@ -1,7 +1,7 @@
 {
-  "name": "zoom",
+  "name": "momitmom",
   "version": "1.0.0",
-  "description": "momItMom using webRTC ",
+  "description": "momItMom",
   "keywords": [],
   "author": "",
   "license": "MIT",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "express": "^4.18.1",
+    "localtunnel": "^2.0.2",
     "pug": "^3.0.2",
     "socket.io": "^4.5.2",
     "ws": "^8.8.1"
