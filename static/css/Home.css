@@ -531,7 +531,7 @@
   font-family: 'BMJUA_ttf';
   font-style: normal;
   font-weight: 400;
-  src: "{{ url_for('static', filename='fonts/BMJUA_ttf.ttf') }}";
+  src: url(fonts/BMJUA_ttf.ttf);
 }@font-face {
   font-family: 'Pretendard-Regular';
   font-style: normal;
@@ -541,5 +541,5 @@
   font-family: 'Pretendard-Medium';
   font-style: normal;
   font-weight: 400;
-  src: url(static/fonts/Pretendard-Medium.otf);
+  src: url(Pretendard-Medium.otf);
 }
