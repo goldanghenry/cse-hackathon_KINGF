@@ -8,7 +8,7 @@ app.secret_key = 'tjdgus12'
 
 # -------------------------- Page route ------------------------------
 # main page
-@app.route('/index')
+@app.route('/')
 def index():
     return render_template('index.html')
 
