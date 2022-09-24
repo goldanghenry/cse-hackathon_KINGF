@@ -25,7 +25,7 @@ def notice():
 # 마이페이지
 @app.route('/mypage')
 def mypage():
-    return render_template('mypag_e.html')
+    return render_template('my_page.html')
 
 # 로그인
 @app.route('/login')
@@ -72,20 +72,10 @@ def blog():
     # con.commit()
     return render_template('blog.html')
 
-# 전문 심리 예약 신청
-@app.route('/reservation_topic1')
-def reservation_topic1():
-    return render_template('reservation_topic1.html')
-
-# 일반 상담 예약 신청
-@app.route('/reservation_topic2')
-def reservation_topic2():
-    return render_template('reservation_topic2.html')
-
-# 학업 지원 예약 신청
-@app.route('/reservation_topic3')
-def reservation_topic3():
-    return render_template('reservation_topic3.html')
+# 심리 예약 신청
+@app.route('/reservation_default')
+def reservation_default():
+    return render_template('reservation_default.html')
 
 # 가입 페이지/ 상담사 & 일반회원
 @app.route('/membership')
@@ -175,13 +165,13 @@ def register():
     # 양식 확인
     if len(_id_) == 0:
         flash("Please Enter Email")
-        return redirect(url_for("c_register"))
+        return redirect(url_for("membership_consultant"))
     if len(_username_) == 0:
         flash("Please Enter User name")
-        return redirect(url_for("c_register"))
+        return redirect(url_for("membership_consultant"))
     if len(_password_) == 0:
         flash("Please Enter Password")
-        return redirect(url_for("c_register"))
+        return redirect(url_for("membership_consultant"))
 
 
     # DB에 회원가입 정보 삽입
