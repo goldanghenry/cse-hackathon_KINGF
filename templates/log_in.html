@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/log_in.css') }}" media="screen">
+{% endblock %}
+{% block main %}
+    <section class="u-align-center u-clearfix u-section-1" id="carousel_f57e">
+      <div class="u-clearfix u-sheet u-sheet-1"><span class="u-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 1080 1080" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6554"></use></svg><svg class="u-svg-content" viewBox="0 0 1080 1080" id="svg-6554"><defs><style> .cls-1 {
+        fill: #f29a91;
+      }
+      .cls-2 {
+        fill: #f29979;
+      } </style>
+</defs><path class="cls-1" d="M736.94,497.49c-15.25-15.25-33.28-26.03-52.45-32.34,29.97-11.98,51.16-41.26,51.16-75.51,0-44.9-36.4-81.3-81.3-81.3s-81.3,36.4-81.3,81.3c0,30.92,17.26,57.81,42.68,71.55-24.66,5.07-48.16,17.16-67.29,36.29l-12.8,12.8,28.89,28.89,12.8-12.8c36.04-36.04,94.69-36.04,130.73,0,36.04,36.04,36.04,94.69,0,130.73l-66.17,66.17-60.47-60.47c-.19-.19-.4-.36-.6-.54-.21-.22-.39-.46-.61-.68l-73.98-73.98c-7.95-7.85-20.87-7.83-28.79,.09s-7.95,20.95,0,28.89l73.98,73.98c.19,.19,.41,.36,.61,.54,.2,.22,.39,.46,.61,.67l73.98,73.98c4.22,4.16,9.8,6.1,15.29,5.85,5.54,.25,11.15-1.71,15.38-5.94l79.67-79.67c52.06-52.06,52.06-136.46,0-188.51Zm-82.59-148.29c22.3,0,40.44,18.14,40.44,40.44s-18.14,40.44-40.44,40.44-40.44-18.14-40.44-40.44,18.14-40.44,40.44-40.44Z"></path><path class="cls-2" d="M626.36,592.26l-88.99-88.99c-.06-.06-.14-.12-.2-.18l-5.6-5.6c-19.13-19.13-42.64-31.22-67.29-36.29,25.41-13.75,42.68-40.63,42.68-71.55,0-44.9-36.4-81.3-81.3-81.3s-81.3,36.4-81.3,81.3c0,34.25,21.19,63.53,51.16,75.51-19.18,6.32-37.2,17.09-52.45,32.34-52.06,52.06-52.06,136.46,0,188.51l79.67,79.67c3.99,3.99,9.22,5.98,14.45,5.98s10.46-1.99,14.45-5.98c7.98-7.98,7.98-20.91,0-28.89l-79.67-79.67c-36.04-36.04-36.04-94.69,0-130.73,18.02-18.02,41.7-27.03,65.36-27.03s47.34,9.01,65.36,27.03l79.67,79.67c.07,.07,.14,.12,.2,.18l14.91,14.91c3.97,3.97,9.21,5.96,14.45,5.96s10.47-1.99,14.45-5.96c7.95-7.95,7.95-20.95,0-28.89Zm-200.71-243.06c22.3,0,40.44,18.14,40.44,40.44s-18.14,40.44-40.44,40.44-40.44-18.14-40.44-40.44,18.14-40.44,40.44-40.44Z"></path></svg></span>
+        <h3 class="u-custom-font u-text u-text-grey-80 u-text-1">로그인</h3>
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-custom-color-2 u-layout-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h2 class="u-align-center u-custom-font u-text u-text-2">상담사 회원</h2>
+                  <p class="u-align-center u-text u-text-3">Sign up now for free </p>
+                  <a href="{{ url_for('log_in_consultant') }}" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-font u-hover-white u-radius-50 u-text-active-white u-text-custom-color-2 u-text-hover-custom-color-2 u-white u-btn-1">로그인</a>
+                </div>
+              </div>
+              <div class="u-container-style u-custom-color-9 u-layout-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <h2 class="u-align-center u-custom-font u-text u-text-4">일반 회원</h2>
+                  <p class="u-align-center u-text u-text-5">Just write to us! </p>
+                  <a href="{{ url_for('log_in_normal') }}" class="u-active-custom-color-1 u-border-none u-btn u-btn-round u-button-style u-custom-font u-hover-white u-radius-50 u-text-active-white u-text-custom-color-9 u-text-hover-custom-color-9 u-white u-btn-2">로그인</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="{{ url_for('membership') }}" class="u-active-custom-color-1 u-align-center u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-font u-hover-white u-none u-radius-50 u-text-active-white u-text-custom-color-1 u-text-hover-custom-color-1 u-btn-3">회원가입</a>
+      </div>
+    </section>
+    {% endblock %}    

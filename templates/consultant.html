@@ -1,0 +1,78 @@
+{% extends "index.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/consultant.css') }}" media="screen">
+{% endblock %}
+{% block main %}
+    <section class="u-align-center u-clearfix u-section-1" id="sec-fd07">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-1">상담사</h2>
+        <p class="u-custom-font u-text u-text-default u-text-2"> 맘잇맘의 상담사를 만나보세요!</p>
+        <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-1">전체</a>
+        <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-2">전문 심리 상담</a>
+        <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-3">일반 고민 상담</a>
+        <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-4">학업 지원 상담</a>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+<!--  이 부분 동적으로 리스트 구성 -->
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <div alt="" class="u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="774"></div>
+                <h4 class="u-align-center u-custom-font u-text u-text-default u-text-3">상담사 1</h4>
+                <p class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-4">전문 심리 상담</p>
+                <p class="u-text u-text-5">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
+                <a href="{{ url_for('reservation_default') }}" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-5">예약 하기</a>
+              </div>
+            </div>
+<!--  여기 까지 -->
+
+
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-2">
+                <div alt="" class="u-image u-image-circle u-image-2" data-image-width="1280" data-image-height="774"></div>
+                <h4 class="u-align-center u-custom-font u-text u-text-default u-text-6">상담사 2</h4>
+                <p class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-7">일반 고민 상담</p>
+                <p class="u-text u-text-8">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
+                <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-6"> 예약 하기</a>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-3">
+                <div alt="" class="u-image u-image-circle u-image-3" data-image-width="1280" data-image-height="774"></div>
+                <h4 class="u-align-center u-custom-font u-text u-text-default u-text-9">상담사 3</h4>
+                <p class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-10">학업 지원 상담</p>
+                <p class="u-text u-text-11">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
+                <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-7"> 예약 하기</a>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-4">
+                <div alt="" class="u-image u-image-circle u-image-4" data-image-width="1280" data-image-height="774"></div>
+                <h4 class="u-align-center u-custom-font u-text u-text-default u-text-12">상담사 4</h4>
+                <p class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-13">전문 심리 상담</p>
+                <p class="u-text u-text-14">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
+                <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-8"> 예약 하기</a>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-5">
+                <div alt="" class="u-image u-image-circle u-image-5" data-image-width="1280" data-image-height="774"></div>
+                <h4 class="u-align-center u-custom-font u-text u-text-default u-text-15">상담사 5</h4>
+                <p class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-16">일반 고민 상담</p>
+                <p class="u-text u-text-17">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
+                <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-9"> 예약 하기</a>
+              </div>
+            </div>
+            <div class="u-align-center u-container-style u-list-item u-repeater-item">
+              <div class="u-container-layout u-similar-container u-container-layout-6">
+                <div alt="" class="u-image u-image-circle u-image-6" data-image-width="1280" data-image-height="774"></div>
+                <h4 class="u-align-center u-custom-font u-text u-text-default u-text-18">상담사 6</h4>
+                <p class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-19">학업 지원 상담</p>
+                <p class="u-text u-text-20">Glavi amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor amet iquam lorem bibendum</p>
+                <a href="https://nicepage.com/k/hacker-html-templates" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-10"> 예약 하기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "index.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/membership_consultant.css') }}" media="screen">
+{% endblock %}
+{% block main %}
+    <section class="u-clearfix u-section-1" id="sec-8410">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h3 class="u-align-center u-custom-font u-text u-text-custom-color-1 u-text-1">상담사 회원 등록</h3>
+        <div class="u-form u-form-1">
+          <form action="https://forms.nicepagesrv.com/Form/Process" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 0px;" source="email" name="form">
+            <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-1">
+              <label for="name-0ee3" class="u-custom-font u-label u-label-1">아이디</label>
+              <input type="text" placeholder="ID" id="name-0ee3" name="name-2" class="u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-2">
+              <label for="name-b677" class="u-custom-font u-label u-label-2">비밀번호</label>
+              <input type="text" placeholder="Password" id="name-b677" name="name-3" class="u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-group u-form-name u-form-partition-factor-2 u-form-group-3">
+              <label for="name-d253" class="u-custom-font u-label u-label-3">이름</label>
+              <input type="text" placeholder="Enter your Name" id="name-d253" name="name-1" class="u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-date u-form-group u-form-partition-factor-2 u-form-group-4">
+              <label for="date-b125" class="u-custom-font u-label u-label-4">생년월일</label>
+              <input type="date" placeholder="MM/DD/YYYY" id="date-b125" name="date" class="u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-group u-form-partition-factor-2 u-form-phone u-form-group-5">
+              <label for="phone-3903" class="u-custom-font u-label u-label-5">전화번호</label>
+              <input type="tel" placeholder="Enter your phone" id="phone-3903" name="phone" class="u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" required="" pattern="\+?\d{0,2}[\s\(\-]?([0-9]{3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" maxlength="11">
+            </div>
+            <div class="u-form-email u-form-group u-form-partition-factor-2">
+              <label for="email-31f5" class="u-custom-font u-label u-label-6">이메일</label>
+              <input type="email" placeholder="Enter a valid email address" id="email-31f5" name="email" class="u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" required="">
+            </div>
+            <div class="u-form-group u-form-select u-form-group-7">
+              <label for="select-e394" class="u-custom-font u-label u-label-7">소속</label>
+              <div class="u-form-select-wrapper">
+                <select id="select-e394" name="select" class="u-border-1 u-border-custom-color-1 u-input u-input-rectangle u-white">
+                  <option value="전문 상담">전문 상담</option>
+                  <option value="일반 상담">일반 상담</option>
+                  <option value="학업 지원">학업 지원</option>
+                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+              </div>
+            </div>
+            <div class="u-form-file-upload u-form-group u-form-partition-factor-2 u-form-textarea u-form-group-8">
+              <label for="textarea-85fc" class="u-custom-font u-label u-label-8">자격증 업로드 (최대 10개)</label>
+              <input rows="4" cols="50" id="textarea-85fc" name="lisence" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required" type="file" multiple="multiple">
+            </div>
+            <div class="u-form-file-upload u-form-group u-form-partition-factor-2 u-form-group-9">
+              <label for="text-ee9c" class="u-custom-font u-label u-label-9">증명사진 업로드</label>
+              <input type="file" placeholder="" id="text-ee9c" name="pictures" class="u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" accept="IMAGES">
+            </div>
+            <div class="u-form-group u-form-message">
+              <label for="message-31f5" class="u-custom-font u-label u-label-10">자기소개</label>
+              <textarea placeholder="Introduce yourself" rows="4" cols="50" id="message-31f5" name="message" class="u-border-2 u-border-custom-color-1 u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" required=""></textarea>
+            </div>
+            <div class="u-align-center u-form-group u-form-submit">
+              <a href="#" class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-btn-submit u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-1">Submit</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+            <input type="hidden" value="" name="recaptchaResponse">
+            <input type="hidden" name="formServices" value="43f82ff89f77cfc9650746a2086c1e32">
+          </form>
+        </div>
+        <a href="https://nicepage.com/templates" class="u-active-none u-border-2 u-border-hover-white u-border-palette-2-base u-btn u-button-style u-custom-font u-hover-none u-none u-text-active-custom-color-4 u-text-custom-color-1 u-text-hover-custom-color-1 u-btn-2">사진 제출</a>
+      </div>
+    </section>
+    
+{% endblock %}

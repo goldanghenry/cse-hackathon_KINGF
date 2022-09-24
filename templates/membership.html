@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/membership.css') }}" media="screen">
+{% endblock %}
+{% block main %}
+    <section class="u-align-center u-clearfix u-section-1" id="carousel_f57e">
+      <div class="u-clearfix u-sheet u-sheet-1"><span class="u-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 1080 1080" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6554"></use></svg><svg class="u-svg-content" viewBox="0 0 1080 1080" id="svg-6554"><defs><style> .cls-1 {
+        fill: #f29a91;
+      }
+      .cls-2 {
+        fill: #f29979;
+      } </style>
+</defs><path class="cls-1" d="M736.94,497.49c-15.25-15.25-33.28-26.03-52.45-32.34,29.97-11.98,51.16-41.26,51.16-75.51,0-44.9-36.4-81.3-81.3-81.3s-81.3,36.4-81.3,81.3c0,30.92,17.26,57.81,42.68,71.55-24.66,5.07-48.16,17.16-67.29,36.29l-12.8,12.8,28.89,28.89,12.8-12.8c36.04-36.04,94.69-36.04,130.73,0,36.04,36.04,36.04,94.69,0,130.73l-66.17,66.17-60.47-60.47c-.19-.19-.4-.36-.6-.54-.21-.22-.39-.46-.61-.68l-73.98-73.98c-7.95-7.85-20.87-7.83-28.79,.09s-7.95,20.95,0,28.89l73.98,73.98c.19,.19,.41,.36,.61,.54,.2,.22,.39,.46,.61,.67l73.98,73.98c4.22,4.16,9.8,6.1,15.29,5.85,5.54,.25,11.15-1.71,15.38-5.94l79.67-79.67c52.06-52.06,52.06-136.46,0-188.51Zm-82.59-148.29c22.3,0,40.44,18.14,40.44,40.44s-18.14,40.44-40.44,40.44-40.44-18.14-40.44-40.44,18.14-40.44,40.44-40.44Z"></path><path class="cls-2" d="M626.36,592.26l-88.99-88.99c-.06-.06-.14-.12-.2-.18l-5.6-5.6c-19.13-19.13-42.64-31.22-67.29-36.29,25.41-13.75,42.68-40.63,42.68-71.55,0-44.9-36.4-81.3-81.3-81.3s-81.3,36.4-81.3,81.3c0,34.25,21.19,63.53,51.16,75.51-19.18,6.32-37.2,17.09-52.45,32.34-52.06,52.06-52.06,136.46,0,188.51l79.67,79.67c3.99,3.99,9.22,5.98,14.45,5.98s10.46-1.99,14.45-5.98c7.98-7.98,7.98-20.91,0-28.89l-79.67-79.67c-36.04-36.04-36.04-94.69,0-130.73,18.02-18.02,41.7-27.03,65.36-27.03s47.34,9.01,65.36,27.03l79.67,79.67c.07,.07,.14,.12,.2,.18l14.91,14.91c3.97,3.97,9.21,5.96,14.45,5.96s10.47-1.99,14.45-5.96c7.95-7.95,7.95-20.95,0-28.89Zm-200.71-243.06c22.3,0,40.44,18.14,40.44,40.44s-18.14,40.44-40.44,40.44-40.44-18.14-40.44-40.44,18.14-40.44,40.44-40.44Z"></path></svg></span>
+        <h3 class="u-custom-font u-text u-text-grey-80 u-text-1">회원가입</h3>
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-custom-color-1 u-layout-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-valign-bottom-xs u-container-layout-1">
+                  <h2 class="u-align-center u-custom-font u-text u-text-2">상담사 회원</h2>
+                  <p class="u-align-center u-text u-text-3">Sign up now for free </p>
+                  <a href="{{ url_for('membership_consultant') }}" class="u-active-custom-color-4 u-border-none u-btn u-btn-round u-button-style u-custom-font u-hover-white u-radius-50 u-text-active-white u-text-custom-color-1 u-text-hover-custom-color-1 u-white u-btn-1">가입 하기</a>
+                </div>
+              </div>
+              <div class="u-container-style u-custom-color-4 u-layout-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <h2 class="u-align-center u-custom-font u-text u-text-4">일반 회원</h2>
+                  <p class="u-align-center u-text u-text-5">Just write to us! </p>
+                  <a href="{{ url_for('membership_normal') }}" class="u-active-custom-color-1 u-border-none u-btn u-btn-round u-button-style u-custom-font u-hover-white u-radius-50 u-text-active-white u-text-custom-color-4 u-text-hover-custom-color-4 u-white u-btn-2">가입 하기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-social-icons u-spacing-20 u-social-icons-1">
+          <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-2-base u-icon-2">
+          <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-f107"></use></svg>
+          <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-f107" class="u-svg-content"><path d="M75.5,28.8H65.4c-1.5,0-4,0.9-4,4.3v9.4h13.9l-1.5,15.8H61.4v45.1H42.8V58.3h-8.8V42.4h8.8V32.2 c0-7.4,3.4-18.8,18.8-18.8h13.8v15.4H75.5z"></path></svg>
+        </span>
+          </a>
+          <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-twitter u-text-palette-2-base u-icon-3">
+          <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e140"></use></svg>
+          <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-e140" class="u-svg-content"><path d="M92.2,38.2c0,0.8,0,1.6,0,2.3c0,24.3-18.6,52.4-52.6,52.4c-10.6,0.1-20.2-2.9-28.5-8.2 c1.4,0.2,2.9,0.2,4.4,0.2c8.7,0,16.7-2.9,23-7.9c-8.1-0.2-14.9-5.5-17.3-12.8c1.1,0.2,2.4,0.2,3.4,0.2c1.6,0,3.3-0.2,4.8-0.7 c-8.4-1.6-14.9-9.2-14.9-18c0-0.2,0-0.2,0-0.2c2.5,1.4,5.4,2.2,8.4,2.3c-5-3.3-8.3-8.9-8.3-15.4c0-3.4,1-6.5,2.5-9.2 c9.1,11.1,22.7,18.5,38,19.2c-0.2-1.4-0.4-2.8-0.4-4.3c0.1-10,8.3-18.2,18.5-18.2c5.4,0,10.1,2.2,13.5,5.7c4.3-0.8,8.1-2.3,11.7-4.5 c-1.4,4.3-4.3,7.9-8.1,10.1c3.7-0.4,7.3-1.4,10.6-2.9C98.9,32.3,95.7,35.5,92.2,38.2z"></path></svg>
+        </span>
+          </a>
+          <a class="u-social-url" target="_blank" href=""><span class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-palette-2-base u-icon-4">
+          <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-4718"></use></svg>
+          <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-4718" class="u-svg-content"><path d="M55.9,32.9c-12.8,0-23.2,10.4-23.2,23.2s10.4,23.2,23.2,23.2s23.2-10.4,23.2-23.2S68.7,32.9,55.9,32.9z M55.9,69.4c-7.4,0-13.3-6-13.3-13.3c-0.1-7.4,6-13.3,13.3-13.3s13.3,6,13.3,13.3C69.3,63.5,63.3,69.4,55.9,69.4z"></path><path d="M79.7,26.8c-3,0-5.4,2.5-5.4,5.4s2.5,5.4,5.4,5.4c3,0,5.4-2.5,5.4-5.4S82.7,26.8,79.7,26.8z"></path><path d="M78.2,11H33.5C21,11,10.8,21.3,10.8,33.7v44.7c0,12.6,10.2,22.8,22.7,22.8h44.7c12.6,0,22.7-10.2,22.7-22.7 V33.7C100.8,21.1,90.6,11,78.2,11z M91,78.4c0,7.1-5.8,12.8-12.8,12.8H33.5c-7.1,0-12.8-5.8-12.8-12.8V33.7 c0-7.1,5.8-12.8,12.8-12.8h44.7c7.1,0,12.8,5.8,12.8,12.8V78.4z"></path></svg>
+        </span>
+          </a>
+          <a class="u-social-url" target="_blank" href="#"><span class="u-icon u-icon-circle u-social-icon u-social-linkedin u-text-palette-2-base u-icon-5">
+          <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-438b"></use></svg>
+          <svg x="0px" y="0px" viewBox="0 0 112 112" id="svg-438b" class="u-svg-content"><path d="M33.8,96.8H14.5v-58h19.3V96.8z M24.1,30.9L24.1,30.9c-6.6,0-10.8-4.5-10.8-10.1c0-5.8,4.3-10.1,10.9-10.1 S34.9,15,35.1,20.8C35.1,26.4,30.8,30.9,24.1,30.9z M103.3,96.8H84.1v-31c0-7.8-2.7-13.1-9.8-13.1c-5.3,0-8.5,3.6-9.9,7.1 c-0.6,1.3-0.6,3-0.6,4.8V97H44.5c0,0,0.3-52.6,0-58h19.3v8.2c2.6-3.9,7.2-9.6,17.4-9.6c12.7,0,22.2,8.4,22.2,26.1V96.8z"></path></svg>
+        </span>
+          </a>
+        </div>
+      </div>
+    </section>
+    {% endblock %}
