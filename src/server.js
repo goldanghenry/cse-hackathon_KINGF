@@ -19,6 +19,8 @@ const httpServer = http.createServer(app); //http 서버도 돌리고
 //const wss = new WebSocket.Server({server}); //webSocket 서버도 돌리는거지~ (같은 포트에 있음)
 const wsServer = SocketIO(httpServer);
 
+//-------------------------server init-------------------------
+
 wsServer.on("connection", (socket) => {
     socket.on("join_room", (roomName) =>{ //소켓이 룸에 들어왔을 때!
         socket.join(roomName);

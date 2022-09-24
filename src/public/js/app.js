@@ -1,13 +1,14 @@
 //-------------------------- 초기설정 ------------------------------
-const socket = io(); //이게 socket.io에서 백과 프론트를 잇는..함수..
+const socket = io(); //이게 socket.io에서 백과 프론트를 잇는 함수
 
 const myFace = document.getElementById("myFace");
+const peerFace = document.getElementById("peerFace");
 const muteBtn = document.getElementById("mute");
 const cameraBtn = document.getElementById("camera");
 const camerasSelect = document.getElementById("cameras");
 const call = document.getElementById("call");
 
-call.hidden = true;
+call.hidden = true; //통화부분은 처음에 보이지 않아야 한다.
 
 let myStream; //스트림
 let muted = false; //뮤트가 되었는가
@@ -15,16 +16,16 @@ let cameraOff = false; //카메라가 꺼졌는가
 let roomName; //방에 참여하기 위해 필요한 이름
 let myPeerConnection; //p2p 연결
 
-////-------------------------- 화상통화에 필요한 부분------------------------------
+//-------------------------- 화상통화에 필요한 부분------------------------------
 
 async function getCameras(){ //user가 가진 카메라 목록을 얻어옴
     try{
-        const devices = await navigator.mediaDevices.enumerateDevices();
-        const cameras = devices.filter(device => device.kind === "videoinput");
-        const currentCamera = myStream.getVideoTracks()[0];
+        const devices = await navigator.mediaDevices.enumerateDevices(); //모든 디바이스를 다 가져옴
+        const cameras = devices.filter(device => device.kind === "videoinput"); //그 중에 비디오인풋만 거름
+        const currentCamera = myStream.getVideoTracks()[0]; //현재 사용중인 카메라는 그 목록 중 처음 것
 
-        cameras.forEach(camera => {
-            const option = document.createElement("option");
+        cameras.forEach(camera => { //목록을 순회하면서 목록을 만들어넣는 것
+            const option = document.createElement("option");  
             option.value = camera.deviceId;
             option.innerText = camera.label;
             if(currentCamera.label === camera.label){
@@ -39,18 +40,18 @@ async function getCameras(){ //user가 가진 카메라 목록을 얻어옴
 }
 
 async function getMedia(deviceId){ //오디오와 카메라 스트림을 얻음
-    const initialConstrains = {
+    const initialConstrains = { //기본 설졍
         audio: true, 
         video: {facingMode: "user"},
     }
-    const cameraConstrains = {
+    const cameraConstrains = { //카메라를 deviceId로 설정
         audio: true,
         video: {deviceId: {exact: deviceId}},
     }
 
     try{
         myStream = await navigator.mediaDevices.getUserMedia(
-            deviceId? cameraConstrains : initialConstrains,
+            deviceId ? cameraConstrains : initialConstrains, //deviceId가 존재하면 그걸로 설정, 아니면 기본설정
         );
         myFace.srcObject = myStream;
         if(!deviceId){
@@ -60,10 +61,9 @@ async function getMedia(deviceId){ //오디오와 카메라 스트림을 얻음
         console.log(error);
     }
 }
-
 //getMedia(); //이게 모든걸 실행하는 함수.
 
-function handleCameraClick(){
+function handleCameraClick(){ //카메라 온 오프
     myStream.getVideoTracks().forEach(track => {
         track.enabled = !track.enabled;
     });
@@ -77,8 +77,9 @@ function handleCameraClick(){
     }
 }
 
-function handleMuteClick(){
+function handleMuteClick(){ //음소거 하냐 마냐
     myStream.getAudioTracks().forEach(track => {
+        console.log("track: ", track);
         track.enabled = !track.enabled;
     });
     if(!muted){
@@ -91,8 +92,15 @@ function handleMuteClick(){
     }
 }
 
-async function handleCameraChange(){
+
+async function handleCameraChange(){ //카메라를 바꿀때.
     await getMedia(camerasSelect.value);
+    
+    muteBtn.innerText = "Mute"; //이 설정이 전부 기본값으로 돌아감.
+    muted = false;
+    cameraBtn.innerText = "Camera Off";
+    cameraOff = false;
+
     if(myPeerConnection){
         const videoTrack = myStream.getVideoTracks()[0]; //첫 번째 track 즉 지금 선택한 카메라 스트림!!
         const videoSender = myPeerConnection.getSenders().find(sender => {
@@ -121,7 +129,7 @@ async function initCall(){
     makeConnection();
 }
 
-async function handleWelcomeSubmit(event){
+async function handleWelcomeSubmit(event){ //버튼 눌렀을때 작동
     event.preventDefault();
     const input = welcomeForm.querySelector("input");
     await initCall();
@@ -155,26 +163,16 @@ socket.on("answer", (answer) =>{
 
 }); //peer A에서 작동
 
-socket.on("ice", (ice) => {
-    console.log("ice??????")
+socket.on("ice", (ice) => { //iceCandidate를 주고받는 부분. handleIce와 세트
+    //console.log("ice??????")
     myPeerConnection.addIceCandidate(ice);
 });
 
 //--------------------webRTC signaling------------------
 
 function makeConnection(){ // == addStream. 이게 나아.
-    myPeerConnection = new RTCPeerConnection({
-        iceServers: [
-            {
-                urls: [ //구글에서 제공하는 stun server.. 바꿔야함!!!!
-                    "stun:stun.l.google.com:19302",
-                    "stun:stun1.l.google.com:19302",
-                    "stun:stun2.l.google.com:19302",
-                    "stun:stun3.l.google.com:19302",
-                    "stun:stun4.l.google.com:19302",
-                ]
-            }
-        ]
+    myPeerConnection = new RTCPeerConnection({ //무료 stun서버. xirsys걸 사용
+        iceServers: [{   urls: [ "stun:ntk-turn-2.xirsys.com" ]}, {   username: "57_iQJsczkCRQfKl822hidmvlFovkKQhFEG0huM2QUe94fjw-hDmc4nk1AoM0v0eAAAAAGMuxGttb21JdE1vbQ==",   credential: "b18fd286-3be5-11ed-a551-0242ac120004",   urls: [       "turn:ntk-turn-2.xirsys.com:80?transport=udp",       "turn:ntk-turn-2.xirsys.com:3478?transport=udp",       "turn:ntk-turn-2.xirsys.com:80?transport=tcp",       "turn:ntk-turn-2.xirsys.com:3478?transport=tcp",       "turns:ntk-turn-2.xirsys.com:443?transport=tcp",       "turns:ntk-turn-2.xirsys.com:5349?transport=tcp"   ]}]
     }); //p2p 연결 구성(아직 연결되지 않음)
     myPeerConnection.addEventListener("icecandidate", handleIce);
     myPeerConnection.addEventListener("addstream", handleAddStream);
@@ -183,17 +181,17 @@ function makeConnection(){ // == addStream. 이게 나아.
     })
 }
 
-function handleIce(data){
+function handleIce(data){ //iceCandidate를 주고받는 부분
     socket.emit("ice", data.candidate, roomName);
-    console.log("ice!!!!!")
+    //console.log("ice!!!!!")
     //console.log(data);
 }
 
 function handleAddStream(data){
-    const peerFace = document.getElementById("peerFace");
+    
     peerFace.srcObject = data.stream;
-   // console.log(data.stream);
-    //console.log(myStream);
+    //console.log("peer stream: ", data.stream);
+    //console.log("myStream: ", myStream);
 }
 
 
