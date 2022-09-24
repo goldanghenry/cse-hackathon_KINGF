@@ -1,6 +1,7 @@
 from flask import Flask, url_for, session, render_template, request, redirect, flash
 import sqlite3
 from os import path
+import datetime
 
 ROOT = path.dirname(path.realpath(__file__))
 app = Flask(__name__)
@@ -10,6 +11,10 @@ app.secret_key = 'tjdgus12'
 # main page
 @app.route('/')
 def index():
+
+
+
+
     return render_template('index.html')
 
 # 상담예약
@@ -137,7 +142,7 @@ def logout():
 
 # 회원가입 요청
 @app.route('/c_register', methods=['GET', 'POST'])
-def register():
+def c_register():
     # form에서 가져오기
     if request.method == 'POST':
         _id_ = request.form['registerId']
@@ -159,20 +164,6 @@ def register():
         _email_ = request.args.get('registerEmail')
         _div_ = request.args.get('registerDiv')
         _about_ = request.args.get('registerAbout')
-    
-    tableName = _id_.replace('@','').replace('.','')
-
-    # 양식 확인
-    if len(_id_) == 0:
-        flash("Please Enter Email")
-        return redirect(url_for("membership_consultant"))
-    if len(_username_) == 0:
-        flash("Please Enter User name")
-        return redirect(url_for("membership_consultant"))
-    if len(_password_) == 0:
-        flash("Please Enter Password")
-        return redirect(url_for("membership_consultant"))
-
 
     # DB에 회원가입 정보 삽입
     sql = """
@@ -187,21 +178,17 @@ def register():
     # DB에 유저 table 생성
     con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
     cur = con.cursor()
-
-    print(tableName)
+    
     sql =f"""
-        create table {tableName}(
-            idx integer RIMARY KEY AUTOINCREMENT,
+        create table {_id_}(
+            idx integer primary key autoincrement,
             subject text not null,
             c_taget text not null,
             c_date text not null,
-            progress text not null
+            progress text not null)
     """
     cur.execute(sql)
-    flash("회원가입 완료!\n로그인해주세요!")
-    return redirect(url_for("login"))
-
-
+    return render_template('log_in_consultant.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
