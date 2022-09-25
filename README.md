@@ -33,7 +33,7 @@
 
   __1) 심리적 지원__
   
-     첫째, 물리적인 접근용이성과 편리성이다. 공간적인 제약이 없으며 물리적인 이동에서 발생하는 시간과 에너지, 비용을 절약할 수 있다. 또한 시간적 여유가 없는 사람들도 언제든지 부담감 없이 심리 상담 서비스에 접근할 수 있다. 
+  첫째, 물리적인 접근용이성과 편리성이다. 공간적인 제약이 없으며 물리적인 이동에서 발생하는 시간과 에너지, 비용을 절약할 수 있다. 또한 시간적 여유가 없는 사람들도 언제든지 부담감 없이 심리 상담 서비스에 접근할 수 있다. 
      
      '맘잇맘'은 비단 대구광역시 뿐만 아니라 상담자나 상담센터가 충분하지 않은 경북 내 다른 지역까지도 이 서비스가 도달할 수 있을 것이다. 
      
@@ -52,16 +52,11 @@
 코로나 19로 인해 대면 상담을 하기 어려워짐에 따라 기존 상담사들의 실업 현상이 있었다. 온라인 상담 프로젝트를 통해 기존 상담사에게 일자리를 제공하고, 새로운 상담사 또한 배출해낸다. 대학생을 포함한 일반인도 상담사로 가입할 수 있으며 재능기부를 통한 봉사시간을 얻고 봉사 의식을 고취시키도록 한다.
 
 <참고 문헌>
-
-Robson, D., & Robson, M. (1998). Intimacy and computer communication.   British Journal of Guidance and counselling, 26(1), 33-41. 
-
-Nguyen, H. Q., Carrieri-Kohlman, V., Rankin, S. H., Slaughter, R., & Stulbarg, M. S. (2004). Internet-based patient education and support interventions: a review of evaluation studies and directions for future research. Computers in Biology and Medicine, 34(2), 95-112. 
-
-이동훈, 김주연, 김진주 (2015). 온라인 심리치료의 가능성과한계에대한탐색적연구.한국심 리학회지: 상담 및 심리치료, 27(3), 543-582. 
-
-Vincent, C., Barnett, M., Killpack, L., Sehgal, A., & Swinden, P. (2017). Advancing telecommunication technology and its impact on psychotherapy in private practice. British Journal of Psychotherapy, 33(1), 63-76. 
-
-김은하, 이은설, 조예지.(2021).대학상담센터 내담자들의 비대면 심리상담 경험에 대한 질적 연구.상담학연구,22(2),85-110.
+     Robson, D., & Robson, M. (1998). Intimacy and computer communication.   British Journal of Guidance and counselling, 26(1), 33-41. 
+     Nguyen, H. Q., Carrieri-Kohlman, V., Rankin, S. H., Slaughter, R., & Stulbarg, M. S. (2004). Internet-based patient education and support interventions: a review of evaluation studies and directions for future research. Computers in Biology and Medicine, 34(2), 95-112. 
+     이동훈, 김주연, 김진주 (2015). 온라인 심리치료의 가능성과한계에대한탐색적연구.한국심 리학회지: 상담 및 심리치료, 27(3), 543-582. 
+     Vincent, C., Barnett, M., Killpack, L., Sehgal, A., & Swinden, P. (2017). Advancing telecommunication technology and its impact on psychotherapy in private practice. British Journal of Psychotherapy, 33(1), 63-76. 
+     김은하, 이은설, 조예지.(2021).대학상담센터 내담자들의 비대면 심리상담 경험에 대한 질적 연구.상담학연구,22(2),85-110.
 
 
 ---
