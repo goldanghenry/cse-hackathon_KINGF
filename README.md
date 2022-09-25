@@ -106,3 +106,8 @@ socket.on("ice", (ice) => { //iceCandidate를 주고받는 부분. handleIce와 
     PeerConnection.addIceCandidate(ice);
 });
 ~~~
+
+---
+### 실행화면  
+<메인화면>
+![main](https://i.esdrop.com/d/f/an4JniYuDJ/VYdGh9cCV8.png)
