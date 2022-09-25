@@ -76,10 +76,63 @@ __1) WebRTC (Web Real-Time Communication)__
 
 
 __2) 플라스크 클라우드 웹 서버를 이용한 동적 페이지 라우팅__  
+  : Flask는 경량 WSGI 웹 애플리케이션 프레임워크이다. 복잡한 애플리케이션으로 확장할 수 있는 기능과 함께 빠르고 쉽게 시작할 수 있도록 설계되었다. Werkzeug 및 Jinja 에 대한 간단한 래퍼로 시작해 가장 인기 있는 Python 웹 애플리케이션 프레임워크 중 하나가 되었다.
 
+~~~Python
+# 상담사 회원가입 요청
+@app.route('/c_register', methods=['GET', 'POST'])
+def c_register():
+    # form에서 가져오기
+    if request.method == 'POST':
+        _id_ = request.form['registerId']
+        _password_ = request.form['registerPw']
+        _username_ = request.form['registerUsername']
+        _yymmdd_ = request.form['registerYYMMDD']
+        _phone_ = request.form['registerPhone']
+        _email_ = request.form['registerEmail']
+        _div_ = request.form['registerDiv']
+        _about_ = request.form['registerAbout']
+        
+
+    elif request.method =='GET':
+        _id_ = request.args.get('registerId')
+        _password_ = request.args.get('registerPw')
+        _username_ = request.args.get('registerUsername')
+        _yymmdd_ = request.args.get('registerYYMMDD')
+        _phone_ = request.args.get('registerPhone')
+        _email_ = request.args.get('registerEmail')
+        _div_ = request.args.get('registerDiv')
+        _about_ = request.args.get('registerAbout')
+
+    # DB에 회원가입 정보 삽입
+    sql = """
+        INSERT INTO C_UserList(userId, userPw, name, yymmdd, phone, email, div, About)
+        values(?,?,?,?,?,?,?,?)
+    """
+    con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
+    cur = con.cursor()
+    cur.execute(sql, (_id_, _password_, _username_, _yymmdd_, _phone_, _email_,_div_, _about_,))
+    con.commit()
+
+    # DB에 유저 table 생성
+    con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
+    cur = con.cursor()
+    
+    sql =f"""
+        create table {_id_}(
+            idx integer primary key autoincrement,
+            subject text not null,
+            c_taget text not null,
+            c_date text not null,
+            progress text not null)
+    """
+    cur.execute(sql)
+    flash("Membership successful!\nPlease login")
+    return redirect(url_for("index"))
+  ~~~
 
 __3) Socket.io 모듈을 통해 실시간 상호작용 웹서비스를 만드는 웹 소켓 사용__  
-   : Socket.io는 실시간 웹 애플리케이션을 위한 이벤트 라이브러리 이다. 웹 클라이언트와 서버 간의 실시간 양방향 통신을 가능하게 한다.  
+   : Socket.io는 실시간 웹 애플리케이션을 위한 이벤트 라이브러리이다. 웹 클라이언트와 서버 간의 실시간 양방향 통신을 가능하게 한다.  
      이 프로젝트에서는 Socket.io 서버를 http 서버 위에 띄우고, 소켓 간의 통신으로 시그널링 과정을 수행하였다.   
      예시 코드는 시그널링 과정의 일부이다.    
      
