@@ -110,6 +110,6 @@ socket.on("ice", (ice) => { //iceCandidate를 주고받는 부분. handleIce와 
 ~~~
 
 ---
-## 실행화면  
+##* 실행화면  
 __<메인화면>__
 ![main](https://i.esdrop.com/d/f/an4JniYuDJ/VYdGh9cCV8.png)
