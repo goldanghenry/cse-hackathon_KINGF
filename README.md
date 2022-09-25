@@ -67,6 +67,7 @@ Vincent, C., Barnett, M., Killpack, L., Sehgal, A., & Swinden, P. (2017). Advanc
 1) WebRTC (Web Real-Time Communication)  
    : WebRTC를 통해 영상/음성 미디어를 (웹 애플리케이션과 사이트의) 브라우저 간에 별도 중간자 없이 포착 및 스트림한다. 비디오와 오디오 스트림을 곻유하여 
      화상 회의를 가능하게 한다. 이 외에도 다양한 데이터를 주고받을 수 있다. 시그널링 과정에서 서버가 사용되나, 데이터가 서버를 거치지 않는 것이 특징이다.
+     이 프로젝트에서는 1:1 화상 채팅을 구현하는데 사용하였다. TURN서버는 xirsys가 무료로 제공하는 서버를 사용하였다.
 
    <!-- ex -->
     ![WebRTC](https://drive.google.com/file/d/1QJeYbCh9Ie7w2KhJJlO8dmxfumFhCTRb/view?usp=sharing)
