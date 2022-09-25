@@ -1,7 +1,7 @@
 # 해커톤 보고서
 
  * 팀명  
-  : KING
+  : KINGF
 ---
 
 * 제출 세션 및 주제  
@@ -65,7 +65,8 @@ Vincent, C., Barnett, M., Killpack, L., Sehgal, A., & Swinden, P. (2017). Advanc
 ---
 *   프로젝트에 활용된 기술  
 1) WebRTC (Web Real-Time Communication)  
-   : WebRTC를 통해 영상/음성 미디어를 (웹 애플리케이션과 사이트의) 브라우저 간에 별도 중간자 없이 포착 및 스트림한다. 데이터 공유와 화상 회의를 가능하게 한다.  
+   : WebRTC를 통해 영상/음성 미디어를 (웹 애플리케이션과 사이트의) 브라우저 간에 별도 중간자 없이 포착 및 스트림한다. 비디오와 오디오 스트림을 곻유하여 
+     화상 회의를 가능하게 한다. 이 외에도 다양한 데이터를 주고받을 수 있다. 시그널링 과정에서 서버가 사용되나, 데이터가 서버를 거치지 않는 것이 특징이다.
 
    <!-- ex -->
     ![WebRTC](https://drive.google.com/file/d/1QJeYbCh9Ie7w2KhJJlO8dmxfumFhCTRb/view?usp=sharing)
@@ -74,7 +75,10 @@ Vincent, C., Barnett, M., Killpack, L., Sehgal, A., & Swinden, P. (2017). Advanc
 2) 플라스크 클라우드 웹 서버를 이용한 동적 페이지 라우팅  
 
 
-3) Socket.io 모듈을 통해 실시간 상호작용 웹서비스를 만드는 웹 소켓 사용  
+3) Socket.io 모듈을 통해 실시간 상호작용 웹서비스를 만드는 웹 소켓 사용
+   : Socket.io는 실시간 웹 애플리케이션을 위한 이벤트 라이브러리 이다. 웹 클라이언트와 서버 간의 실시간 양방향 통신을 가능하게 한다.
+     이 프로젝트에서는 Socket.io 서버를 http 서버 위에 띄우고, 소켓 간의 통신으로 시그널링 과정을 수행하였다. 
+     예시 코드는 시그널링 과정의 일부이다.
 ~~~JavaScript
 socket.on("welcome", async () =>{ //소켓이 방에 참여했을때
     const offer = await myPeerConnection.createOffer(); //offer가 누군지 정해줘.
