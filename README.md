@@ -81,27 +81,26 @@ Vincent, C., Barnett, M., Killpack, L., Sehgal, A., & Swinden, P. (2017). Advanc
      예시 코드는 시그널링 과정의 일부이다.
 ~~~JavaScript
 socket.on("welcome", async () =>{ //소켓이 방에 참여했을때
-    const offer = await myPeerConnection.createOffer(); //offer가 누군지 정해줘.
-    myPeerConnection.setLocalDescription(offer);
+    const offer = await PeerConnection.createOffer(); //offer가 누군지 정해줘.
+    PeerConnection.setLocalDescription(offer);
     //console.log("send offer");
     socket.emit("offer", offer, roomName);
 }); //peer A에서 작동
 
-socket.on("offer", async (offer) => {
-    myPeerConnection.setRemoteDescription(offer);
-    const answer = await myPeerConnection.createAnswer();
-    myPeerConnection.setLocalDescription(answer);
+socket.on("offer", async (offer) => { //offer를 받고 answer를 보낸다.
+    PeerConnection.setRemoteDescription(offer);
+    const answer = await PeerConnection.createAnswer();
+    PeerConnection.setLocalDescription(answer);
     socket.emit("answer", answer, roomName);
 
 }); //peer B에서 작동
 
-socket.on("answer", (answer) =>{
-    myPeerConnection.setRemoteDescription(answer);
+socket.on("answer", (answer) =>{ //answer를 가지고 description을 정해준다.
+    PeerConnection.setRemoteDescription(answer);
 
 }); //peer A에서 작동
 
 socket.on("ice", (ice) => { //iceCandidate를 주고받는 부분. handleIce와 세트
-    //console.log("ice??????")
-    myPeerConnection.addIceCandidate(ice);
+    PeerConnection.addIceCandidate(ice);
 });
 ~~~
