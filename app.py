@@ -11,87 +11,112 @@ app.secret_key = 'tjdgus12'
 # main page
 @app.route('/')
 def index():
-
-    return render_template('index.html')
+    return render_template('index.html', login=session.get('logFlag'))
 
 # 상담예약
 @app.route('/consultant')
 def consultant():
-    return render_template('consultant.html')
+    return render_template('consultant.html',login=session.get('logFlag'))
 
 # 이용안내
 @app.route('/notice')
 def notice():
-    return render_template('notice.html')
+    return render_template('notice.html',login=session.get('logFlag'))
 
 # 마이페이지
 @app.route('/mypage')
 def mypage():
-    return render_template('my_page.html')
+    return render_template('my_page.html',login=session.get('logFlag'))
 
 # 로그인
 @app.route('/login')
 def login():
-    return render_template('log_in.html')
+    return render_template('log_in.html',login=session.get('logFlag'))
 
 # 상담사 로그인
 @app.route('/log_in_consultant')
 def log_in_consultant():
-    return render_template('log_in_consultant.html')
+    return render_template('log_in_consultant.html',login=session.get('logFlag'))
 
 # 회원 로그인
 @app.route('/log_in_normal')
 def log_in_normal():
-    return render_template('log_in_normal.html')
+    return render_template('log_in_normal.html',login=session.get('logFlag'))
 
 # 상담사 회원가입
 @app.route('/membership_consultant')
 def membership_consultant():
-    return render_template('membership_consultant.html')
+    return render_template('membership_consultant.html',login=session.get('logFlag'))
 
 # 회원 회원가입
 @app.route('/membership_normal')
 def membership_normal():
-    return render_template('membership_normal.html')
+    return render_template('membership_normal.html',login=session.get('logFlag'))
 
 # 상담사 개인 소개 페이지
 @app.route('/blog')
 def blog():
-    # # DB 만들고 수정하기
-    # con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
-    # cur = con.cursor()
-    # sql = "SELECT * FROM ArticleList WHERE idx=?"
-    # cur.execute(sql, (idx,))
-    # selectedN = cur.fetchall()
-    # selectedN = selectedN[0]
-
-    # con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
-    # cur = con.cursor()
-    # userid = session.get('userId')
-    # tableName = userid.replace('@','').replace('.','')
-    # sql = f"DELETE FROM {tableName} WHERE idx= ?"
-    # cur.execute(sql, (selectedN[0],))
-    # con.commit()
-    return render_template('blog.html')
+    
+    return render_template('blog.html',login=session.get('logFlag'))
 
 # 심리 예약 신청
 @app.route('/reservation_default')
 def reservation_default():
-    return render_template('reservation_default.html')
+    return render_template('reservation_default.html',login=session.get('logFlag'))
 
 # 가입 페이지/ 상담사 & 일반회원
 @app.route('/membership')
 def membership():
-    return render_template('membership.html')
+    return render_template('membership.html',login=session.get('logFlag'))
 
 # 상담 화면
 @app.route('/consulting_room')
 def consulting_room():
-    return render_template('consulting_room.html')
+    return render_template('consulting_room.html',login=session.get('logFlag'))
 
 
 # -------------------------- function route --------------------------
-# 로그인 요청
+# 상담사 로그인 요청
+@app.route('/c_login_proc', methods=['GET', 'POST'])
+def c_login_proc():
+    global loginId
+    if request.method == 'POST':
+        loginId = request.form['loginId']
+        loginPw = request.form['loginPw']
+
+    elif request.method == 'GET':
+        loginId = request.args.get('loginId')
+        loginPw = request.args.get('loginPw')
+
+    if len(loginId) == 0:
+        flash("Please Enter id")
+        return redirect(url_for("login"))
+    elif len(loginPw) == 0:
+        flash("Please Enter Password")
+        return redirect(url_for("login"))
+
+    else:
+        con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
+        cur = con.cursor()
+        sql = "SELECT * FROM C_UserList where userId =?"
+        cur.execute(sql, (loginId,))
+        rows = cur.fetchall()
+
+        for rs in rows:
+            if loginId == rs[1] and loginPw == rs[3]:
+                session['logFlag'] = True
+                session['idx'] = rs[0]
+                session['userId'] = rs[1]
+                session['userName'] = rs[2]
+                return redirect(url_for("index"))
+            else:
+                flash("Please check your Email or password")
+                return redirect(url_for("login"))   # 팝업 추가!
+
+        flash("Please check your Email or password")
+        return redirect(url_for("login"))
+
+# 회원 로그인 요청
 @app.route('/login_proc', methods=['GET', 'POST'])
 def login_proc():
     global loginId
@@ -104,7 +129,7 @@ def login_proc():
         loginPw = request.args.get('loginPw')
 
     if len(loginId) == 0:
-        flash("Please Enter Email")
+        flash("Please Enter id")
         return redirect(url_for("login"))
     elif len(loginPw) == 0:
         flash("Please Enter Password")
@@ -113,7 +138,7 @@ def login_proc():
     else:
         con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
         cur = con.cursor()
-        sql = "SELECT * FROM USERLIST where userId =?"
+        sql = "SELECT * FROM UserList where userId =?"
         cur.execute(sql, (loginId,))
         rows = cur.fetchall()
 
@@ -185,7 +210,8 @@ def c_register():
             progress text not null)
     """
     cur.execute(sql)
-    return redirect(url_for("log_in_consultant"))
+    flash("Membership successful!\nPlease login")
+    return redirect(url_for("index"))
     
 # 회원가입 요청
 @app.route('/register', methods=['GET', 'POST'])
@@ -234,7 +260,7 @@ def register():
             progress text not null)
     """
     cur.execute(sql)
-    return redirect(url_for("log_in_normal"))
+    return redirect(url_for("index"))
 
 if __name__ == '__main__':
     app.run(debug=True)
