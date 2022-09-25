@@ -69,7 +69,9 @@ Vincent, C., Barnett, M., Killpack, L., Sehgal, A., & Swinden, P. (2017). Advanc
      화상 회의를 가능하게 한다. 이 외에도 다양한 데이터를 주고받을 수 있다. 시그널링 과정에서 서버가 사용되나, 데이터가 서버를 거치지 않는 것이 특징이다.
 
    <!-- ex -->
-    ![WebRTC](https://i.esdrop.com/d/f/an4JniYuDJ/PeLn4sNntt.png)
+    ![signaling](https://i.esdrop.com/d/f/an4JniYuDJ/PeLn4sNntt.png)
+    
+    ![stun](https://i.esdrop.com/d/f/an4JniYuDJ/8ypWsUzL80.png)
 
 
 2) 플라스크 클라우드 웹 서버를 이용한 동적 페이지 라우팅  
