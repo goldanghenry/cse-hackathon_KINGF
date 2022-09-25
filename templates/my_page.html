@@ -3,73 +3,121 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/my_page.css') }}" media="screen">
 {% endblock %}
 {% block main %}
-    <section class="u-align-center u-clearfix u-section-1" id="sec-55ae">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-1">예약 현황</h2>
-        <div class="u-expanded-width u-table u-table-responsive u-table-1">
-          <table class="u-table-entity u-table-entity-1">
-            <colgroup>
-              <col width="14.3%">
-              <col width="13.900000000000006%">
-              <col width="14.6%">
-              <col width="14.3%">
-              <col width="14.3%">
-              <col width="14.3%">
-              <col width="14.200000000000006%">
-            </colgroup>
-            <thead class="u-custom-color-1 u-table-header u-table-header-1">
-              <tr style="height: 44px;">
-                <th class="u-custom-font u-table-cell u-table-cell-1">No.</th>
-                <th class="u-custom-font u-table-cell u-table-cell-2">상담 주제</th>
-                <th class="u-custom-font u-table-cell u-table-cell-3">상담사</th>
-                <th class="u-custom-font u-table-cell u-table-cell-4">희망상담일</th>
-                <th class="u-custom-font u-table-cell u-table-cell-5">상담 시간</th>
-                <th class="u-custom-font u-table-cell u-table-cell-6">진행상태</th>
-                <th class="u-custom-font u-table-cell u-table-cell-7">상담 시작하기</th>
-              </tr>
-            </thead>
-            <tbody class="u-table-body">
-              <tr style="height: 75px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-8">4</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-9">전문상담</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-10">김상담</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-11">2022-09-30</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-12">10:00</td>
-                
-                <!--  동적으로 리스트 구성  -->
-                <!-- if elif else 문으로 예약완료, 입장, 상담완료 -->
-                <!-- 예약완료 -->
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-13">예약완료</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
-                  <a class="u-active-white u-border-2 u-border-active-grey-15 u-border-grey-15 u-border-hover-grey-15 u-btn u-btn-round u-button-style u-custom-font u-grey-15 u-hover-grey-15 u-radius-50 u-text-active-grey-40 u-text-hover-white u-text-white u-btn-3" href="#">예약완료</a>
-                </td>
-                <!-- 입장 -->
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-20">진행중</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
-                  <a class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-2" href="{{ url_for('consulting_room') }}">입장</a>
-                </td>
-                <!-- 상담완료 -->
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
-                  <a class="u-active-white u-border-2 u-border-active-grey-15 u-border-grey-15 u-border-hover-grey-15 u-btn u-btn-round u-button-style u-custom-font u-grey-15 u-hover-grey-15 u-radius-50 u-text-active-grey-40 u-text-hover-white u-text-white u-btn-3" href="#">상담완료</a>
-                </td>
-              </tr>
-
-              
-              <tr style="height: 76px;">
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-15">3</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-16">일반상담</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-17">이선민</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-18">2022-09-27</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-19">18:00</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-20">진행중</td>
-                <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
-                  <a class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-2" href="{{ url_for('consulting_room') }}">입장</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+<section class="u-align-center u-clearfix u-section-1" id="sec-55ae">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <h2 class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-1">예약 현황</h2>
+    <div class="u-expanded-width u-table u-table-responsive u-table-1">
+      <table class="u-table-entity u-table-entity-1">
+        <colgroup>
+          <col width="14.3%">
+          <col width="13.900000000000006%">
+          <col width="14.6%">
+          <col width="14.3%">
+          <col width="14.3%">
+          <col width="14.3%">
+          <col width="14.200000000000006%">
+        </colgroup>
+        <thead class="u-custom-color-1 u-table-header u-table-header-1">
+          <tr style="height: 44px;">
+            <th class="u-custom-font u-table-cell u-table-cell-1">No.</th>
+            <th class="u-custom-font u-table-cell u-table-cell-2">상담 주제</th>
+            <th class="u-custom-font u-table-cell u-table-cell-3">상담사</th>
+            <th class="u-custom-font u-table-cell u-table-cell-4">희망상담일</th>
+            <th class="u-custom-font u-table-cell u-table-cell-5">상담 시간</th>
+            <th class="u-custom-font u-table-cell u-table-cell-6">진행상태</th>
+            <th class="u-custom-font u-table-cell u-table-cell-7">상담 시작하기</th>
+          </tr>
+        </thead>
+        <tbody class="u-table-body">
+          <tr style="height: 75px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-8">4</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-9">전문상담</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-10">김상담</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-11">2022-09-30</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-12">10:00</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-13">대기</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
+              <a class="u-active-white u-border-2 u-border-active-grey-15 u-border-grey-15 u-border-hover-grey-15 u-btn u-btn-round u-button-style u-custom-font u-grey-15 u-hover-grey-15 u-radius-50 u-text-active-grey-75 u-text-grey-80 u-text-hover-grey-80 u-btn-1" href="https://nicepage.com">
+                <span class="u-text-white">대기</span>
+                <br>
+              </a>
+            </td>
+          </tr>
+          <tr style="height: 76px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-15">3</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-16">일반상담</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-17">이선민</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-18">2022-09-27</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-19">18:00</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-20">진행중</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
+              <a class="u-active-white u-border-2 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-font u-hover-custom-color-1 u-radius-50 u-text-active-custom-color-1 u-text-hover-white u-btn-2" href="http://localhost:3000/">입장</a>
+            </td>
+          </tr>
+          <tr style="height: 76px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-22">2</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-23">학업상담</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-24">홍길동</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-25">2022-08-20</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-26">12:00</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-27">완료</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
+              <a class="u-active-white u-border-2 u-border-active-grey-15 u-border-grey-15 u-border-hover-grey-15 u-btn u-btn-round u-button-style u-custom-font u-grey-15 u-hover-grey-15 u-radius-50 u-text-active-grey-40 u-text-hover-white u-text-white u-btn-3" href="https://nicepage.com">완료</a>
+            </td>
+          </tr>
+          <tr style="height: 76px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-29">1</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-30">일반상담</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-31">박마음</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-32">2022-07-21</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-33">14:00</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-34">완료</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">
+              <a class="u-active-white u-border-2 u-border-active-grey-15 u-border-grey-15 u-border-hover-grey-15 u-btn u-btn-round u-button-style u-custom-font u-grey-15 u-hover-grey-15 u-radius-50 u-text-active-grey-40 u-text-body-alt-color u-text-hover-white u-btn-4" href="https://nicepage.com">완료</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="u-align-center u-clearfix u-section-2" id="carousel_68f1">
+  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <h2 class="u-custom-font u-text u-text-custom-color-1 u-text-default u-text-1">회원 정보</h2>
+    <div class="u-table u-table-responsive u-table-1">
+      <table class="u-table-entity u-table-entity-1">
+        <colgroup>
+          <col width="31.6%">
+          <col width="68.4%">
+        </colgroup>
+        <thead class="u-custom-color-1 u-table-header u-table-header-1">
+          <tr style="height: 27px;">
+            <th class="u-custom-font u-table-cell u-table-cell-1">회원 유형</th>
+            <th class="u-custom-color-4 u-custom-font u-table-cell u-table-cell-2">일반 회원</th>
+          </tr>
+        </thead>
+        <tbody class="u-table-body">
+          <tr style="height: 67px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-color-1 u-custom-font u-table-cell u-table-cell-3">이름</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-4">김현지</td>
+          </tr>
+          <tr style="height: 68px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-color-1 u-custom-font u-table-cell u-table-cell-5">아이디</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-6">Gooak</td>
+          </tr>
+          <tr style="height: 68px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-color-1 u-custom-font u-table-cell u-table-cell-7">전화번호</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-8">010-1234-5678</td>
+          </tr>
+          <tr style="height: 68px;">
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-color-1 u-custom-font u-table-cell u-table-cell-9">이메일</td>
+            <td class="u-border-1 u-border-grey-40 u-border-no-left u-border-no-right u-custom-font u-table-cell u-table-cell-10">kingf@gmail.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="#" class="u-active-none u-border-2 u-border-active-custom-color-1 u-border-custom-color-9 u-border-hover-custom-color-9 u-btn u-button-style u-custom-font u-hover-none u-none u-text-active-custom-color-1 u-text-custom-color-9 u-text-hover-custom-color-9 u-btn-1">회원 탈퇴하기</a>
+  </div>
+</section>
     
     {% endblock %}

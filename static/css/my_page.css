@@ -1,5 +1,5 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 488px;
+  min-height: 489px;
 }
 
 .u-section-1 .u-text-1 {
@@ -10,8 +10,8 @@
 }
 
 .u-section-1 .u-table-1 {
-  margin-top: 18px;
-  margin-bottom: 35px;
+  margin-top: 23px;
+  margin-bottom: 30px;
 }
 
 .u-section-1 .u-table-entity-1 {
@@ -211,6 +211,105 @@
 @media (max-width: 575px) {
   .u-section-1 .u-text-1 {
     font-size: 2.25rem;
+  }
+}.u-section-2 .u-sheet-1 {
+  min-height: 531px;
+}
+
+.u-section-2 .u-text-1 {
+  font-family: BMJUA_ttf;
+  font-size: 2.8125rem;
+  font-weight: 500;
+  margin: 37px auto 0;
+}
+
+.u-section-2 .u-table-1 {
+  width: 491px;
+  margin: 23px auto 0;
+}
+
+.u-section-2 .u-table-entity-1 {
+  min-height: 100px;
+}
+
+.u-section-2 .u-table-header-1 {
+  font-weight: 700;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-1 {
+  font-family: BMJUA_ttf;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.u-section-2 .u-table-cell-2 {
+  font-family: BMJUA_ttf;
+  font-weight: 500;
+  font-size: 1.125rem;
+  letter-spacing: 2px;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-3 {
+  font-family: Pretendard-Medium;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-4 {
+  font-family: Pretendard-Medium;
+}
+
+.u-section-2 .u-table-cell-5 {
+  font-family: Pretendard-Medium;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-6 {
+  font-family: Pretendard-Medium;
+}
+
+.u-section-2 .u-table-cell-7 {
+  font-family: Pretendard-Medium;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-8 {
+  font-family: Pretendard-Medium;
+}
+
+.u-section-2 .u-table-cell-9 {
+  font-family: Pretendard-Medium-9;
+  background-image: none;
+}
+
+.u-section-2 .u-table-cell-10 {
+  font-family: Pretendard-Medium-9;
+}
+
+.u-section-2 .u-btn-1 {
+  border-style: none none solid;
+  font-family: Pretendard-Medium-9;
+  letter-spacing: 1px;
+  font-size: 1.125rem;
+  margin: 36px auto 37px;
+  padding: 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-2 .u-table-1 {
+    height: 352px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-2 .u-text-1 {
+    font-size: 2.25rem;
+  }
+
+  .u-section-2 .u-table-1 {
+    width: 340px;
   }
 }@font-face {
   font-family: 'BMJUA_ttf';

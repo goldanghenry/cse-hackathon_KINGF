@@ -12,9 +12,6 @@ app.secret_key = 'tjdgus12'
 @app.route('/')
 def index():
 
-
-
-
     return render_template('index.html')
 
 # 상담예약
@@ -140,7 +137,7 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
-# 회원가입 요청
+# 상담사 회원가입 요청
 @app.route('/c_register', methods=['GET', 'POST'])
 def c_register():
     # form에서 가져오기
@@ -188,7 +185,56 @@ def c_register():
             progress text not null)
     """
     cur.execute(sql)
-    return render_template('log_in_consultant.html')
+    return redirect(url_for("log_in_consultant"))
+    
+# 회원가입 요청
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # form에서 가져오기
+    if request.method == 'POST':
+        _id_ = request.form['registerId']
+        _password_ = request.form['registerPw']
+        _username_ = request.form['registerUsername']
+        _yymmdd_ = request.form['registerYYMMDD']
+        _phone_ = request.form['registerPhone']
+        _email_ = request.form['registerEmail']
+        _div_ = request.form['registerDiv']
+        _about_ = request.form['registerAbout']
+        
+    elif request.method =='GET':
+        _id_ = request.args.get('registerId')
+        _password_ = request.args.get('registerPw')
+        _username_ = request.args.get('registerUsername')
+        _yymmdd_ = request.args.get('registerYYMMDD')
+        _phone_ = request.args.get('registerPhone')
+        _email_ = request.args.get('registerEmail')
+        _div_ = request.args.get('registerDiv')
+        _about_ = request.args.get('registerAbout')
+
+    # DB에 회원가입 정보 삽입
+    sql = """
+        INSERT INTO UserList(userId, userPw, name, yymmdd, phone, email, div, About)
+        values(?,?,?,?,?,?,?,?)
+    """
+    con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
+    cur = con.cursor()
+    cur.execute(sql, (_id_, _password_, _username_, _yymmdd_, _phone_, _email_,_div_, _about_,))
+    con.commit()
+
+    # DB에 유저 table 생성
+    con = sqlite3.connect(path.join(ROOT, 'KINGF_main.db'))
+    cur = con.cursor()
+    
+    sql =f"""
+        create table {_id_}(
+            idx integer primary key autoincrement,
+            subject text not null,
+            c_taget text not null,
+            c_date text not null,
+            progress text not null)
+    """
+    cur.execute(sql)
+    return redirect(url_for("log_in_normal"))
 
 if __name__ == '__main__':
     app.run(debug=True)

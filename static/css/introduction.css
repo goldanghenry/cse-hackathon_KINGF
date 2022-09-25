@@ -1,5 +1,15 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 500px;
+  min-height: 540px;
+}
+
+.u-section-1 .u-image-1 {
+  width: 990px;
+}.u-section-2 .u-sheet-1 {
+  min-height: 540px;
+}
+
+.u-section-2 .u-image-1 {
+  width: 990px;
 }@font-face {
   font-family: 'BMJUA_ttf';
   font-style: normal;
