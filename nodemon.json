@@ -1,0 +1,4 @@
+{
+    "ignore": ["static/js/*"],
+    "exec": "babel-node static/server.js" 
+}
