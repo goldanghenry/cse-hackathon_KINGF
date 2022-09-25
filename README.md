@@ -51,7 +51,7 @@
 코로나 19로 인해 대면 상담을 하기 어려워짐에 따라 기존 상담사들의 실업 현상이 있었다. 온라인 상담 프로젝트를 통해 기존 상담사에게 일자리를 제공하고, 새로운 상담사 또한 배출해낸다. 대학생을 포함한 일반인도 상담사로 가입할 수 있으며 재능기부를 통한 봉사시간을 얻고 봉사 의식을 고취시키도록 한다.
 
 <참고 문헌>  
-     Robson, D., & Robson, M. (1998). Intimacy and computer communication.   British Journal of Guidance and counselling, 26(1), 33-41.  
+      Robson, D., & Robson, M. (1998). Intimacy and computer communication.   British Journal of Guidance and counselling, 26(1), 33-41.  
      Nguyen, H. Q., Carrieri-Kohlman, V., Rankin, S. H., Slaughter, R., & Stulbarg, M. S. (2004). Internet-based patient education and support interventions: a review of evaluation studies and directions for future research. Computers in Biology and Medicine, 34(2), 95-112.  
      이동훈, 김주연, 김진주 (2015). 온라인 심리치료의 가능성과한계에대한탐색적연구.한국심 리학회지: 상담 및 심리치료, 27(3), 543-582.  
      Vincent, C., Barnett, M., Killpack, L., Sehgal, A., & Swinden, P. (2017). Advancing telecommunication technology and its impact on psychotherapy in private practice. British Journal of Psychotherapy, 33(1), 63-76.  
@@ -73,10 +73,10 @@ __1) WebRTC (Web Real-Time Communication)__
 __2) 플라스크 클라우드 웹 서버를 이용한 동적 페이지 라우팅__  
 
 
-__3) Socket.io 모듈을 통해 실시간 상호작용 웹서비스를 만드는 웹 소켓 사용__
-   : Socket.io는 실시간 웹 애플리케이션을 위한 이벤트 라이브러리 이다. 웹 클라이언트와 서버 간의 실시간 양방향 통신을 가능하게 한다.
-     이 프로젝트에서는 Socket.io 서버를 http 서버 위에 띄우고, 소켓 간의 통신으로 시그널링 과정을 수행하였다. 
-     예시 코드는 시그널링 과정의 일부이다.  
+__3) Socket.io 모듈을 통해 실시간 상호작용 웹서비스를 만드는 웹 소켓 사용__  
+   : Socket.io는 실시간 웹 애플리케이션을 위한 이벤트 라이브러리 이다. 웹 클라이언트와 서버 간의 실시간 양방향 통신을 가능하게 한다.  
+     이 프로젝트에서는 Socket.io 서버를 http 서버 위에 띄우고, 소켓 간의 통신으로 시그널링 과정을 수행하였다.   
+     예시 코드는 시그널링 과정의 일부이다.    
      
 ~~~JavaScript
 socket.on("welcome", async () =>{ //소켓이 방에 참여했을때
