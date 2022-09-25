@@ -134,8 +134,6 @@ __<맘잇맘 소개>__
 ![m10](https://i.esdrop.com/d/f/an4JniYuDJ/RrFwis5DVR.png)
 ![m11](https://i.esdrop.com/d/f/an4JniYuDJ/bNiOukaN6u.png)
 
-
-![m12](https://i.esdrop.com/d/f/an4JniYuDJ/F2PMNKHrxN.png)
 ![m13](https://i.esdrop.com/d/f/an4JniYuDJ/AI8NHG15hx.png)
 
 
